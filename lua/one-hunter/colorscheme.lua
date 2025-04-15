@@ -58,11 +58,10 @@ else
 	colorscheme.windowBorder = '#2a2a2a'
 	colorscheme.focusedBorder = '#444444'
 	colorscheme.emphasizedBorder = '#363636'
-
 	colorscheme.syntaxError = '#F44747'
 	colorscheme.syntaxFunction = '#43AAF9'
 	colorscheme.warningText = '#F9C35A'
-	colorscheme.syntaxKeyword = '#53A1FA'
+	colorscheme.syntaxKeyword = '#F4457D'
 	colorscheme.linkText = '#9db1c5'
 	colorscheme.stringText = '#5BD1B9'
 	colorscheme.warningEmphasis = '#cd9731'
