@@ -131,7 +131,7 @@ local function set_groups()
 			italic = config.italics.comments or false,
 		},
 
-		Constant = { fg = colorscheme.syntaxError },
+		Constant = { fg = '#F9C35A' },
 		String = {
 			fg = colorscheme.stringText,
 			italic = config.italics.strings or false,
@@ -147,7 +147,7 @@ local function set_groups()
 		Property = { fg = colorscheme.syntaxFunction },
 		Field = { link = 'Property' },
 		Parameter = { fg = colorscheme.mainText },
-		Statement = { fg = colorscheme.syntaxError },
+		Statement = { fg = colorscheme.syntaxKeyword },
 		Conditional = { fg = colorscheme.syntaxError },
 		-- Repeat = {},
 		Label = { fg = colorscheme.syntaxFunction },
@@ -161,7 +161,7 @@ local function set_groups()
 		Macro = { link = 'Define' },
 		PreCondit = { fg = colorscheme.syntaxError },
 
-		Type = { fg = colorscheme.syntaxKeyword },
+		Type = { fg = colorscheme.warningText },
 		Struct = { link = 'Type' },
 		Class = { link = 'Type' },
 
