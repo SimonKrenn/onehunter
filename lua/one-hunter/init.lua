@@ -193,7 +193,7 @@ local function set_groups()
 		-- LspCodeLensSeparator = {},
 		-- LspSignatureActiveParameter = {},
 
-		DiagnosticError = { link = 'Error' },
+		DiagnosticError = { fg = colorscheme.syntaxError },
 		DiagnosticWarn = { link = 'WarningMsg' },
 		DiagnosticInfo = { fg = colorscheme.syntaxFunction },
 		DiagnosticHint = { fg = colorscheme.warningEmphasis },
