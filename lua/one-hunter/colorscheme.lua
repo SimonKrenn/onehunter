@@ -62,7 +62,7 @@ else
 	colorscheme.syntaxError = '#F44747'
 	colorscheme.syntaxFunction = '#43AAF9'
 	colorscheme.warningText = '#F9C35A'
-	colorscheme.syntaxKeyword = '#F4457D'
+	colorscheme.syntaxKeyword = '#53A1FA'
 	colorscheme.linkText = '#9db1c5'
 	colorscheme.stringText = '#5BD1B9'
 	colorscheme.warningEmphasis = '#cd9731'
