@@ -131,10 +131,10 @@ local function set_groups()
 			italic = config.italics.comments or false,
 		},
 
-		Constant = { fg = '#F9C35A' },
+		Constant = { fg = colorscheme.mainText },
 		String = {
 			fg = colorscheme.stringText,
-			italic = config.italics.strings or false,
+			-- italic = config.italics.strings or false,
 		},
 		Character = { fg = colorscheme.stringText },
 		Number = { fg = colorscheme.foregroundEmphasis, bold = true },
@@ -151,7 +151,7 @@ local function set_groups()
 		Conditional = { fg = colorscheme.syntaxError },
 		-- Repeat = {},
 		Label = { fg = colorscheme.syntaxFunction },
-		Operator = { fg = colorscheme.syntaxError },
+		Operator = { fg = colorscheme.syntaxFunction },
 		Keyword = { link = 'Statement', italic = config.italics.keywords or false },
 		Exception = { fg = colorscheme.syntaxError },
 
@@ -205,6 +205,7 @@ local function set_groups()
 		DiagnosticUnderlineWarn = { undercurl = true, link = 'DiagnosticWarn' },
 		DiagnosticUnderlineInfo = { undercurl = true, link = 'DiagnosticInfo' },
 		DiagnosticUnderlineHint = { undercurl = true, link = 'DiagnosticHint' },
+		DiagnosticUnneccessary = { fg = "#357BB0" }
 		-- DiagnosticFloatingError = {},
 		-- DiagnosticFloatingWarn = {},
 		-- DiagnosticFloatingInfo = {},
@@ -304,7 +305,7 @@ local function set_groups()
 		-- ["@preproc"] = {},
 		['@debug'] = { fg = colorscheme.specialKeyword },
 		['@tag'] = { link = 'Tag' },
-		['@tag.builtin'] = { link = 'Tag' },
+		['@tag.builtin'] = { link = colorscheme.syntaxFunction },
 		['@tag.delimiter'] = { fg = colorscheme.syntaxOperator },
 		['@tag.attribute'] = { fg = colorscheme.syntaxKeyword },
 		['@tag.jsx.element'] = { fg = colorscheme.syntaxFunction },
