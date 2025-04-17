@@ -205,7 +205,7 @@ local function set_groups()
 		DiagnosticUnderlineWarn = { undercurl = true, link = 'DiagnosticWarn' },
 		DiagnosticUnderlineInfo = { undercurl = true, link = 'DiagnosticInfo' },
 		DiagnosticUnderlineHint = { undercurl = true, link = 'DiagnosticHint' },
-		DiagnosticUnneccessary = { fg = "#357BB0" }
+		DiagnosticUnneccessary = { fg = "#357BB0" },
 		-- DiagnosticFloatingError = {},
 		-- DiagnosticFloatingWarn = {},
 		-- DiagnosticFloatingInfo = {},
