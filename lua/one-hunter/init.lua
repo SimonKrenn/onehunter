@@ -205,7 +205,7 @@ local function set_groups()
 		DiagnosticUnderlineWarn = { undercurl = true, link = 'DiagnosticWarn' },
 		DiagnosticUnderlineInfo = { undercurl = true, link = 'DiagnosticInfo' },
 		DiagnosticUnderlineHint = { undercurl = true, link = 'DiagnosticHint' },
-		DiagnosticUnneccessary = { fg = "#357BB0" },
+		DiagnosticUnnecessary = { fg = "#357BB0" },
 		-- DiagnosticFloatingError = {},
 		-- DiagnosticFloatingWarn = {},
 		-- DiagnosticFloatingInfo = {},
@@ -214,6 +214,7 @@ local function set_groups()
 		-- DiagnosticSignWarn = {},
 		-- DiagnosticSignInfo = {},
 		-- DiagnosticSignHint = {},
+
 
 		-- Tree-Sitter groups are defined with an "@" symbol, which must be
 		-- specially handled to be valid lua code, we do this via the special
@@ -255,7 +256,7 @@ local function set_groups()
 		['@constant'] = { link = 'Constant' },
 		['@constant.builtin'] = { fg = colorscheme.syntaxFunction },
 		['@constancolorscheme.builtin'] = { link = 'Keyword' },
-		-- ["@constancolorscheme.macro"] = {},
+		-- ["@constantcolorscheme.macro"] = {},
 		-- ["@define"] = {},
 		-- ["@macro"] = {},
 		['@string'] = { link = 'String' },
