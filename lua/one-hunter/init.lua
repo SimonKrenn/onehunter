@@ -201,7 +201,7 @@ local function set_groups()
 		DiagnosticVirtualTextWarn = { link = 'DiagnosticWarn' },
 		DiagnosticVirtualTextInfo = { link = 'DiagnosticInfo' },
 		DiagnosticVirtualTextHint = { link = 'DiagnosticHint' },
-		DiagnosticUnderlineError = { undercurl = true },
+		DiagnosticUnderlineError = { undercurl = true sp = colorscheme.syntaxOperator },
 		DiagnosticUnderlineWarn = { undercurl = true, link = 'DiagnosticWarn' },
 		DiagnosticUnderlineInfo = { undercurl = true, link = 'DiagnosticInfo' },
 		DiagnosticUnderlineHint = { undercurl = true, link = 'DiagnosticHint' },
