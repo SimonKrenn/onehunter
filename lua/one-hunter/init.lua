@@ -29,13 +29,13 @@ end
 local function set_groups()
 	local bg = config.transparent and 'NONE' or colorscheme.editorBackground
 	local diff_add =
-		utils.shade(colorscheme.successText, 0.5, colorscheme.editorBackground)
+			utils.shade(colorscheme.successText, 0.5, colorscheme.editorBackground)
 	local diff_delete =
-		utils.shade(colorscheme.syntaxError, 0.5, colorscheme.editorBackground)
+			utils.shade(colorscheme.syntaxError, 0.5, colorscheme.editorBackground)
 	local diff_change =
-		utils.shade(colorscheme.syntaxFunction, 0.5, colorscheme.editorBackground)
+			utils.shade(colorscheme.syntaxFunction, 0.5, colorscheme.editorBackground)
 	local diff_text =
-		utils.shade(colorscheme.warningEmphasis, 0.5, colorscheme.editorBackground)
+			utils.shade(colorscheme.warningEmphasis, 0.5, colorscheme.editorBackground)
 
 	local groups = {
 		-- base
@@ -57,7 +57,6 @@ local function set_groups()
 		DiffText = { bg = bg, fg = diff_text },
 		EndOfBuffer = { fg = colorscheme.syntaxKeyword },
 		TermCursor = { link = 'Cursor' },
-		TermCursorNC = { link = 'Cursor' },
 		ErrorMsg = { fg = colorscheme.syntaxError },
 		VertSplit = { fg = colorscheme.windowBorder, bg = bg },
 		Winseparator = { link = 'VertSplit' },
@@ -244,7 +243,7 @@ local function set_groups()
 		['@texcolorscheme.todo'] = { link = 'Todo' },
 		['@comment'] = { link = 'Comment' },
 		['@punctuation'] = { link = 'Punctuation' },
-		['@punctuation.bracket'] = { fg = colorscheme.warningEmphasis },
+		['@punctuation.bracket'] = { fg = colorscheme.syntaxKeyword },
 		['@punctuation.delimiter'] = { fg = colorscheme.syntaxError },
 		['@punctuation.terminator.statement'] = { link = 'Delimiter' },
 		['@punctuation.special'] = { fg = colorscheme.syntaxError },
@@ -308,7 +307,7 @@ local function set_groups()
 		['@tag'] = { link = 'Tag' },
 		['@tag.builtin'] = { link = colorscheme.syntaxFunction },
 		['@tag.delimiter'] = { fg = colorscheme.syntaxOperator },
-		['@tag.attribute'] = { fg = colorscheme.syntaxKeyword },
+		['@tag.attribute'] = { fg = colorscheme.warningText },
 		['@tag.jsx.element'] = { fg = colorscheme.syntaxFunction },
 		['@attribute'] = { fg = colorscheme.syntaxKeyword },
 		['@error'] = { link = 'Error' },
@@ -317,7 +316,7 @@ local function set_groups()
 
 		-- Specific languages
 		-- overrides
-		['@label.json'] = { fg = colorscheme.property }, -- For json
+		['@label.json'] = { fg = colorscheme.property },   -- For json
 		['@label.help'] = { link = '@texcolorscheme.uri' }, -- For help files
 		['@texcolorscheme.uri.html'] = { underline = true }, -- For html
 
@@ -330,7 +329,7 @@ local function set_groups()
 		['@lsp.type.interface'] = { link = '@type' },
 		['@lsp.type.struct'] = { link = '@type' },
 		['@lsp.type.parameter'] = { link = '@parameter' },
-		['@lsp.type.property'] = { link = '@text' },
+		['@lsp.type.property'] = { link = colorscheme.syntaxKeyword },
 		['@lsp.type.function'] = { link = '@function' },
 		['@lsp.type.method'] = { link = '@method' },
 		['@lsp.type.macro'] = { link = '@label' },
@@ -361,14 +360,14 @@ function theme.setup(values)
 		{ __index = vim.tbl_extend('force', config.defaults, values) }
 	)
 
-	theme.bufferline = { highlights = {} }
-	theme.bufferline.highlights = bufferline.highlights(config)
+	-- theme.bufferline = { highlights = {} }
+	-- theme.bufferline.highlights = bufferline.highlights(config)
 end
 
 function theme.colorscheme()
 	if vim.version().minor < 8 then
 		vim.notify(
-			'Neovim 0.8+ is required for my-theme colorscheme',
+			'Neovim 0.8+ is required for onehunter colorscheme',
 			vim.log.levels.ERROR,
 			{ title = 'Min Theme' }
 		)
@@ -382,7 +381,7 @@ function theme.colorscheme()
 
 	vim.g.VM_theme_set_by_colorscheme = true
 	vim.o.termguicolors = true
-	vim.g.colors_name = 'my-theme'
+	vim.g.colors_name = 'onehunter'
 
 	set_terminal_colors()
 	set_groups()
