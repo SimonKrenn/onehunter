@@ -1,9 +1,9 @@
-local bufferline = require 'one-hunter.integrations.bufferline'
-local cmp = require 'one-hunter.integrations.cmp'
+local blink = require 'one-hunter.integrations.blink'
 local colorscheme = require 'one-hunter.colorscheme'
 local config = require 'one-hunter.config'
 local utils = require 'one-hunter.utils'
 local theme = {}
+
 
 local function set_terminal_colors()
 	vim.g.terminal_color_0 = colorscheme.editorBackground
@@ -201,9 +201,9 @@ local function set_groups()
 		DiagnosticVirtualTextInfo = { link = 'DiagnosticInfo' },
 		DiagnosticVirtualTextHint = { link = 'DiagnosticHint' },
 		DiagnosticUnderlineError = { undercurl = true, sp = colorscheme.syntaxError },
-		DiagnosticUnderlineWarn = { undercurl = true, link = 'DiagnosticWarn' },
-		DiagnosticUnderlineInfo = { undercurl = true, link = 'DiagnosticInfo' },
-		DiagnosticUnderlineHint = { undercurl = true, link = 'DiagnosticHint' },
+		DiagnosticUnderlineWarn = { undercurl = true, sp = colorscheme.warningEmphasis },
+		DiagnosticUnderlineInfo = { undercurl = true, sp = colorscheme.syntaxFunction },
+		DiagnosticUnderlineHint = { undercurl = true, link = colorscheme.warningText },
 		DiagnosticUnnecessary = { fg = "#357BB0" },
 		-- DiagnosticFloatingError = {},
 		-- DiagnosticFloatingWarn = {},
@@ -339,7 +339,7 @@ local function set_groups()
 	}
 
 	-- integrations
-	groups = vim.tbl_extend('force', groups, cmp.highlights())
+	groups = vim.tbl_extend('force', groups, blink.highlights())
 
 	-- overrides
 	groups = vim.tbl_extend(
@@ -359,9 +359,6 @@ function theme.setup(values)
 		config,
 		{ __index = vim.tbl_extend('force', config.defaults, values) }
 	)
-
-	-- theme.bufferline = { highlights = {} }
-	-- theme.bufferline.highlights = bufferline.highlights(config)
 end
 
 function theme.colorscheme()
