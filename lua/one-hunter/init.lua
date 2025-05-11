@@ -1,4 +1,5 @@
 local blink = require 'one-hunter.integrations.blink'
+local bufferline = require 'one-hunter.integrations.bufferline'
 local colorscheme = require 'one-hunter.colorscheme'
 local config = require 'one-hunter.config'
 local utils = require 'one-hunter.utils'
@@ -141,7 +142,7 @@ local function set_groups()
 		Float = { link = 'Number' },
 
 		Identifier = { fg = colorscheme.mainText },
-		Function = { fg = colorscheme.syntaxFunction },
+		Function = { fg = colorscheme.syntaxFunction, bold = true },
 		Method = { fg = colorscheme.syntaxKeyword },
 		Property = { fg = colorscheme.syntaxKeyword },
 		Field = { link = 'Property' },
@@ -203,7 +204,7 @@ local function set_groups()
 		DiagnosticUnderlineError = { undercurl = true, sp = colorscheme.syntaxError },
 		DiagnosticUnderlineWarn = { undercurl = true, sp = colorscheme.warningEmphasis },
 		DiagnosticUnderlineInfo = { undercurl = true, sp = colorscheme.syntaxFunction },
-		DiagnosticUnderlineHint = { undercurl = true, link = colorscheme.warningText },
+		DiagnosticUnderlineHint = { undercurl = true, sp = colorscheme.warningText },
 		DiagnosticUnnecessary = { fg = "#357BB0" },
 		-- DiagnosticFloatingError = {},
 		-- DiagnosticFloatingWarn = {},
@@ -243,7 +244,7 @@ local function set_groups()
 		['@texcolorscheme.todo'] = { link = 'Todo' },
 		['@comment'] = { link = 'Comment' },
 		['@punctuation'] = { link = 'Punctuation' },
-		['@punctuation.bracket'] = { fg = colorscheme.syntaxKeyword },
+		['@punctuation.bracket'] = { fg = colorscheme.warningText },
 		['@punctuation.delimiter'] = { fg = colorscheme.syntaxError },
 		['@punctuation.terminator.statement'] = { link = 'Delimiter' },
 		['@punctuation.special'] = { fg = colorscheme.syntaxError },
@@ -305,7 +306,7 @@ local function set_groups()
 		-- ["@preproc"] = {},
 		['@debug'] = { fg = colorscheme.specialKeyword },
 		['@tag'] = { link = 'Tag' },
-		['@tag.builtin'] = { link = colorscheme.syntaxFunction },
+		['@tag.builtin'] = { fg = colorscheme.syntaxFunction },
 		['@tag.delimiter'] = { fg = colorscheme.syntaxOperator },
 		['@tag.attribute'] = { fg = colorscheme.warningText },
 		['@tag.jsx.element'] = { fg = colorscheme.syntaxFunction },
@@ -329,7 +330,7 @@ local function set_groups()
 		['@lsp.type.interface'] = { link = '@type' },
 		['@lsp.type.struct'] = { link = '@type' },
 		['@lsp.type.parameter'] = { link = '@parameter' },
-		['@lsp.type.property'] = { link = colorscheme.syntaxKeyword },
+		['@lsp.type.property'] = { fg = colorscheme.syntaxKeyword },
 		['@lsp.type.function'] = { link = '@function' },
 		['@lsp.type.method'] = { link = '@method' },
 		['@lsp.type.macro'] = { link = '@label' },
@@ -340,7 +341,7 @@ local function set_groups()
 
 	-- integrations
 	groups = vim.tbl_extend('force', groups, blink.highlights())
-
+	groups = vim.tbl_extend('force', groups, bufferline.highlights())
 	-- overrides
 	groups = vim.tbl_extend(
 		'force',
