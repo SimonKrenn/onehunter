@@ -8,9 +8,9 @@ local colorscheme = {
 if vim.o.background == 'light' then
 	colorscheme.editorBackground = config.transparent and 'none' or '#ffffff'
 	colorscheme.sidebarBackground = '#dddddd'
-	colorscheme.popupBackground = '#f6f6f6'
-	colorscheme.floatingWindowBackground = '#e0e0e0'
-	colorscheme.menuOptionBackground = '#ededed'
+	colorscheme.popupBackground = '#ffffff'
+	colorscheme.floatingWindowBackground = '#ffffff'
+	colorscheme.menuOptionBackground = '#ffffff'
 
 	colorscheme.mainText = '#313131'
 	colorscheme.emphasisText = '#212121'

@@ -1,4 +1,5 @@
 local blink = require 'one-hunter.integrations.blink'
+local noice = require 'one-hunter.integrations.noice'
 local bufferline = require 'one-hunter.integrations.bufferline'
 local colorscheme = require 'one-hunter.colorscheme'
 local config = require 'one-hunter.config'
@@ -82,7 +83,7 @@ local function set_groups()
 		NonText = { fg = utils.shade(colorscheme.editorBackground, 0.30) },
 		NormalFloat = { bg = colorscheme.floatingWindowBackground },
 		NormalNC = { link = 'Normal' },
-		Pmenu = { link = 'NormalFloat' },
+		Pmenu = { bg = colorscheme.editorBackground },
 		PmenuSel = { bg = colorscheme.menuOptionBackground },
 		PmenuSbar = {
 			bg = utils.shade(
@@ -342,6 +343,7 @@ local function set_groups()
 	-- integrations
 	groups = vim.tbl_extend('force', groups, blink.highlights())
 	groups = vim.tbl_extend('force', groups, bufferline.highlights())
+	groups = vim.tbl_extend('force', groups, noice.highlights())
 	-- overrides
 	groups = vim.tbl_extend(
 		'force',
