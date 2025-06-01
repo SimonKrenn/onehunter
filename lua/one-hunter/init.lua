@@ -81,9 +81,9 @@ local function set_groups()
 		-- MsgSeparator = {},
 		MoreMsg = { fg = colorscheme.syntaxFunction },
 		NonText = { fg = utils.shade(colorscheme.editorBackground, 0.30) },
-		NormalFloat = { bg = colorscheme.floatingWindowBackground },
+		NormalFloat = { bg = colorscheme.floatingWindowBackground, fg = colorscheme.commentText },
 		NormalNC = { link = 'Normal' },
-		Pmenu = { bg = colorscheme.editorBackground },
+		Pmenu = { bg = colorscheme.editorBackground, fg = colorscheme.commentText },
 		PmenuSel = { bg = colorscheme.menuOptionBackground },
 		PmenuSbar = {
 			bg = utils.shade(
